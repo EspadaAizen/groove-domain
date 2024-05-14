@@ -7,6 +7,11 @@ const redirectUri = process.env.NODE_ENV === 'production'
   : "http://localhost:3000";
 const scopes = ["user-library-read", "playlist-read-private"];
 
+// Add console logs to verify values
+console.log("Spotify Client ID:", clientId);
+console.log("Redirect URI:", redirectUri);
+console.log("Environment:", process.env.NODE_ENV);
+
 export const loginEndpoint = `${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
   "%20"
 )}&response_type=token&show-dialog=true`;
